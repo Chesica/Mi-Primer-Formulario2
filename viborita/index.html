@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario de Cálculos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e48a14;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 50px;
+      background: #1590c9;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(9, 221, 76, 0.1);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #9d0c0c;
+      border-radius: 5px;
+    }
+    .form-group button {
+      width: 100%;
+      padding: 8px;
+      background: #1fc985;
+      color: #13ebd9;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-group button:hover {
+      background: #cb1667;
+      
+    }
+    .result {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #b55959;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Formulario de Cálculos</h2>
+    <div class="form-group">
+      <label for="num1">Ingrese el Número:</label>
+      <input type="number" id="num1" placeholder="Ingrese un número">
+    </div>
+    <div class="form-group">
+      <label for="num2">Ingrese el Número:</label>
+      <input type="number" id="num2" placeholder="Ingrese otro número">
+    </div>
+    <div class="form-group">
+      <button onclick="calcular()">Calcular</button>
+    </div>
+    <div class="result" id="resultado"></div>
+  </div>
+
+  <script>
+    function calcular() {
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+
+      var suma = num1 + num2;
+      var resta = num1 - num2;
+      var multiplicacion = num1 * num2;
+      var division = num1 / num2;
+
+      var resultado = document.getElementById("resultado");
+      resultado.innerHTML = "Suma: " + suma.toFixed(2) + "<br>" +
+                            "Resta: " + resta.toFixed(2) + "<br>" +
+                            "Multiplicación: " + multiplicacion.toFixed(2) + "<br>" +
+                            "División: " + division.toFixed(2);
+    }
+  </script>
+</body>
+</html>
